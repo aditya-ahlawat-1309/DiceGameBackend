@@ -10,8 +10,8 @@ const router = express.Router();
 
 router.route("/register").post(registerUser);
 router.route("/login").post(LoginUser);
-router.route("/history").get(getHistoryData);
-router.route("/history").post(historyData);
+router.route("/history").get(protect,getHistoryData);
+router.route("/history").post(protect,historyData);
 //router.route("").post(countData);
 
 module.exports = {routerFolder: router};
